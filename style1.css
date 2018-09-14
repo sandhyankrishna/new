@@ -9,9 +9,7 @@ a { color:red; }
   75% { left: -300%; }
   95% { left: -300%; }
     }
-  form {
-    color: red;
-  }
+  
  
   :before {
     content: "\00a0"; 
