@@ -3,6 +3,7 @@ margin: 0;
 padding: 0;
   background-color:lightgreen;
 }
+
 .textbox{
   width: 100%;
   overflow: hidden;
@@ -29,13 +30,17 @@ padding: 6px 0;
 }
 
 .btn{
-  width: 50%;
+  width: 30%;
   background: blue;
   color: white;
   padding: 5px;
+  position: center;
   font-size: 18px;
   cursor: pointer;
   margin: 12px 0;
+}
+.singal{
+  position: center;
 }
 a { color:red; }
 @keyframes slidy {
