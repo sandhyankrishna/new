@@ -14,15 +14,15 @@ if (typeof(Storage) !== "undefined") {
     // Retrieve
     document.getElementById("result").innerHTML = localStorage.getItem("middlename");
     document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-
-   } else {
+}
+else {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 }
 </script>
 <script>
   window.onload = function() {
     var form = document.querySelector("form");
-        from.onsubmit = submitted.bind(form);
+        from.onSubmit = submitted.bind(form);
   }
   function submitted(event) {
     event.preventDefault();
@@ -33,7 +33,7 @@ if (typeof(Storage) !== "undefined") {
     localStorage.setItem("username","k");
   
     // Retrieve
-    document.getElementById("result").innerHTML = localStorage.getItem("firstname");
+    document.getElementById("result").innerHTML = localStorage.getItem("username");
     
    } else {
        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";

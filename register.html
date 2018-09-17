@@ -3,9 +3,10 @@
 <head>
   <title>register form</title>
     <link rel="stylesheet" type="text/css" href="style1.css">
-    
+  
 </head>
 <body>
+  
 <form>
      <button><a href="signin.html">signin</a></button>
    <div class="multi-box">
@@ -27,22 +28,41 @@
       <input type="password" placeholder="confirm password" name="confirm password" value="">
      <input type="submit" name="submit" value="register">
   </div>
-</form>
-<script type="text"/javascript" charset="utf-8">
+    </form>
+  <script type="text/javaScript" charset="utf-8">
   let formSubmit = function(event) {
     event.preventDefalut();
-   let username             = document.querySelector(".username").value;
-   let email                = document.querySelector(".email").value;
-   let password             = document.querySelector(".password").value;
-   let passwordConfirmation = document.querySelector(".passwordConfirmation").value;
-  
-localStorage.setItem("username", username);
+
+   let username             = document.querySelector(".inputField1").value;
+   let email                = document.querySelector(".inputField2").value;
+   let password             = document.querySelector(".inputField3").value;
+   let passwordConfirmation = document.querySelector(".inputField4").value;
+
+ localStorage.setItem("username", username);
 localStorage.setItem("email", email);
 localStorage.setItem("password", password);
 localStorage.setItem("passwordConfirmation", passwordConfirmation);
-  }
-  document.querySelector("form").addEventListener("submit", formSubmit, false);
+}
+document.querySelector("form").addEventListener("submit", formSubmit, false);
+
+  <div class="inputField1">
+   
+   <input type="text" placeholder="username" name="username" value="">
+  </div>
+  <div class="inputField2">
+    <label for="username">username</label>
+    <input type="text" placeholder="Email" name="Email" value="">
+ </div>
+
+  <div class="inputField3">
+  <label for="psw">password</label>
+  <input type="password" placeholder="" name="password" value="">
+ </div> 
+  <div class="inputField4">
+    <label for="psw">passwordConfirmation </label>
+  <input type="password" placeholder="passwordConfirmation " name="passwordConfirmation " value="">
+</div>
 
 </script>
-</body>
+ </body>
 </html>
