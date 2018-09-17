@@ -12,24 +12,37 @@
      <h1>Register</h1>
    <div class="textbox">
       <i class="fa fa-user icon"></i>
-      <input type="text" placeholder="username" name="" value="">
+      <input type="text" placeholder="username" name="username" value="">
   </div>
   <div class="textbox">
       <i class="fa fa-envelope icon"></i>
-      <input type="text" placeholder="Email" name="" value="">
+      <input type="text" placeholder="Email" name="Email" value="">
     </div>
   <div class="textbox">
       <i class="fa fa-key icon"></i>
-      <input type="password" placeholder="password" name="" value="">
+      <input type="password" placeholder="password" name="password" value="">
      </div>
     <div class="textbox">
         <i class="fa fa-key icon"></i>
-      <input type="password" placeholder="confirm password" name="" value="">
-
-      <input class="btn" type="button" name="" value="register">
-
-  
-</div> 
+      <input type="password" placeholder="confirm password" name="confirm password" value="">
+     <input type="submit" name="submit" value="register">
+  </div>
 </form>
+<script type="text"/javascript" charset="utf-8">
+  let formSubmit = function(event) {
+    event.preventDefalut();
+   let username             = document.querySelector(".username").value;
+   let email                = document.querySelector(".email").value;
+   let password             = document.querySelector(".password").value;
+   let passwordConfirmation = document.querySelector(".passwordConfirmation").value;
+  
+localStorage.setItem("username", username);
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+localStorage.setItem("passwordConfirmation", passwordConfirmation);
+  }
+  document.querySelector("form").addEventListener("submit", formSubmit, false);
+
+</script>
 </body>
 </html>
