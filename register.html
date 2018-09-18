@@ -4,32 +4,35 @@
   <title>register form</title>
     <link rel="stylesheet" type="text/css" href="style1.css">
   
-</head>
+  </head>
 <body>
   
 <form>
      <button><a href="signin.html">signin</a></button>
    <div class="multi-box">
-     <h1>Register</h1>
-   <div class="textbox">
+     <h1>Register</h1> 
+       <div class="textbox">
       <i class="fa fa-user icon"></i>
-      <input type="text" placeholder="username" name="username" value="">
+      <input type="text" placeholder="username" name="username" value="" id="inputField1">
   </div>
   <div class="textbox">
       <i class="fa fa-envelope icon"></i>
-      <input type="text" placeholder="Email" name="Email" value="">
+      <input type="text" placeholder="Email" name="Email" value=""  id="inputField2">
     </div>
   <div class="textbox">
       <i class="fa fa-key icon"></i>
-      <input type="password" placeholder="password" name="password" value="">
+      <input type="password" placeholder="password" name="password" value=""  id="inputField3">
      </div>
     <div class="textbox">
         <i class="fa fa-key icon"></i>
-      <input type="password" placeholder="confirm password" name="confirm password" value="">
+      <input type="password" placeholder="confirm password" name="confirm password" value="" id="inputField4">
      <input type="submit" name="submit" value="register">
+     
   </div>
-    </form>
+  </from>
+
   <script type="text/javaScript" charset="utf-8">
+  alert("fill the details to register!");
   let formSubmit = function(event) {
     event.preventDefalut();
 
@@ -43,26 +46,8 @@ localStorage.setItem("email", email);
 localStorage.setItem("password", password);
 localStorage.setItem("passwordConfirmation", passwordConfirmation);
 }
+
 document.querySelector("form").addEventListener("submit", formSubmit, false);
-
-  <div class="inputField1">
-   
-   <input type="text" placeholder="username" name="username" value="">
-  </div>
-  <div class="inputField2">
-    <label for="username">username</label>
-    <input type="text" placeholder="Email" name="Email" value="">
- </div>
-
-  <div class="inputField3">
-  <label for="psw">password</label>
-  <input type="password" placeholder="" name="password" value="">
- </div> 
-  <div class="inputField4">
-    <label for="psw">passwordConfirmation </label>
-  <input type="password" placeholder="passwordConfirmation " name="passwordConfirmation " value="">
-</div>
-
 </script>
  </body>
 </html>

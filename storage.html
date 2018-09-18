@@ -6,41 +6,58 @@
 <link rel="stylesheet" type="text/css" href="style1.css">
 
 <script language="JavaScript">
-// Check browser support
-if (typeof(Storage) !== "undefined") {
-    // Store
-    localStorage.setItem("middlename","s");
-    localStorage.setItem("lastname", "Smith");
-    // Retrieve
-    document.getElementById("result").innerHTML = localStorage.getItem("middlename");
-    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-}
-else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-}
-</script>
-<script>
-  window.onload = function() {
-    var form = document.querySelector("form");
-        from.onSubmit = submitted.bind(form);
-  }
-  function submitted(event) {
-    event.preventDefault();
-    localStorage.setItem("middlename", "long");
- 
+  // Check browser support
   if (typeof(Storage) !== "undefined") {
-    // Store
-    localStorage.setItem("username","k");
-  
-    // Retrieve
-    document.getElementById("result").innerHTML = localStorage.getItem("username");
-    
-   } else {
-       document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-   }
+      // Store
+      localStorage.setItem("middlename","s");
+      localStorage.setItem("lastname", "Smith");
+      // Retrieve
+      document.getElementById("result").innerHTML = localStorage.getItem("middlename");
+      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+  }
+  else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+  </script>
+
+<script type="text/javaScript" charset="utf-8">
+  let formSubmit = function(event) {
+    event.preventDefalut();
+
+   let username             = document.querySelector(".inputField1").value;
+   let email                = document.querySelector(".inputField2").value;
+   let password             = document.querySelector(".inputField3").value;
+   let passwordConfirmation = document.querySelector(".inputField4").value;
+
+ localStorage.setItem("username", username);
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+localStorage.setItem("passwordConfirmation", passwordConfirmation);
 }
-</script>
- </head>
+document.querySelector("form").addEventListener("submit", formSubmit, false);
+
+showPrompt("Enter something<br>...smart :)", function(value) {
+  alert(value);
+});
+  <div class="inputField1">
+    
+<input type="text" placeholder="username" name="username" value="">
+  </div>
+  <div class="inputField2">
+
+       <input type="text" placeholder="Email" name="Email" value="">
+ </div>
+ 
+      <div class="inputField3">
+  
+  <input type="password" placeholder="" name="password" value="">
+ </div> 
+  <div class="inputField4">
+    
+  <input type="password" placeholder="passwordConfirmation " name="passwordConfirmation " value="">
+</div>
+
+</script> </head>
 <body>
     <form>
         <input type="text" name="name">
