@@ -5,39 +5,7 @@
 	<title>Best Engineering Colleges in Bangalore with placements - MVJCE</title>
 <link rel="stylesheet" type="text/css" href="style1.css">
 
-<script language="JavaScript">
-  // Check browser support
-  if (typeof(Storage) !== "undefined") {
-      // Store
-      localStorage.setItem("middlename", "s");
-      localStorage.setItem("lastname", "Smith");
-      // Retrieve
-      document.getElementById("result").innerHTML = localStorage.getItem("middlename");
-      document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-  }
-  else {
-      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-  }
-  </script>
-
-<script type="text/javaScript" charset="utf-8">
-  let formSubmit = function(event) {
-    event.preventDefalut();
-
-   let username             = document.querySelector(".inputField1").value;
-   let email                = document.querySelector(".inputField2").value;
-   let password             = document.querySelector(".inputField3").value;
-   let passwordConfirmation = document.querySelector(".inputField4").value;
-
- localStorage.setItem("username", username);
-localStorage.setItem("email", email);
-localStorage.setItem("password", password);
-localStorage.setItem("passwordConfirmation", passwordConfirmation);
-}
-document.querySelector("form").addEventListener("submit", formSubmit, false);
-
-
-</script> </head>
+ </head>
 <body>
     <form>
         <input type="text" name="name">
