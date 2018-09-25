@@ -1,112 +1,111 @@
 body {
-margin: 0;
-padding: 0;
-  background-color:lightgreen;
-}
-
-.textbox{
-  width: 100%;
-  overflow: hidden;
-  font-size: 20px;
+  margin: 0;
+  padding: 0;
+    background-color:lightgreen;
+  }
+  
+  .textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 6px 0;
+    margin:8px 0;
+    border-bottom: 1px solid rgb(122, 217, 255);
+  }
+  .multi-box{
+    background-color: lightpink;
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+  }
+  .multi-box h1{
+  float: left;
+  font-size: 40px;
+  border-bottom: 8px solid  green;
+  margin-bottom: 20px;
   padding: 6px 0;
-  margin:8px 0;
-  border-bottom: 1px solid rgb(122, 217, 255);
-}
-.multi-box{
-  background-color: lightpink;
-  width: 280px;
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  color: white;
-}
-.multi-box h1{
-float: left;
-font-size: 40px;
-border-bottom: 8px solid  green;
-margin-bottom: 20px;
-padding: 6px 0;
-}
-
-.btn{
-  width: 30%;
-  background: blue;
-  color: white;
-  padding: 5px;
-  position: center;
-  font-size: 18px;
-  cursor: pointer;
-  margin: 12px 0;
-}
-.singal{
-  position: center;
-}
-a { color:red; }
-@keyframes slidy {
-  0% { left: 0%; }
-  20% { left: 0%; }
-  25% { left: -100%; }
-  45% { left: -100%; }
-  50% { left: -200%; }
-  70% { left: -200%; }
-  75% { left: -300%; }
-  95% { left: -300%; }
-    }
+  }
   
- 
-  :before {
-    content: "\00a0"; 
-    margin: 3px;
+  .btn{
+    width: 30%;
+    background: blue;
+    color: white;
+    padding: 5px;
+    position: center;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+  }
+  .singal{
+    position: center;
+  }
+  a { color:red; }
+  @keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+      }
+    
    
+    :before {
+      content: "\00a0"; 
+      margin: 3px;
+     
+    }
+   
+    #slider { overflow: hidden; }
+    #slider figure img { width: 15%; float: left; }
+    #slider figure { 
+      position: relative;
+      width: 200%;
+      margin: 0;
+      left: 0;
+      text-align: left;
+      font-size: 0;
+      animation: 5s slidy infinite; 
+    }
+    
+  
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
- 
-  #slider { overflow: hidden; }
-  #slider figure img { width: 15%; float: left; }
-  #slider figure { 
-    position: relative;
-    width: 200%;
-    margin: 0;
-    left: 0;
-    text-align: left;
-    font-size: 0;
-    animation: 5s slidy infinite; 
+  .container .img_box {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
   }
   
-
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
-.container .img_box {
-  height: 200px;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-}
-
-.container .img_box img {
-  position: absolute;
-  height: 150px;
-  width: 150px;
-}
-.container .img_box span {
-  background:white;
-  padding: 4px;
-  opacity: 0.5;
-}
-
-
-footer{
-  background-color:blue;
-  text-align:center;
-  padding:20px;
-  margin:0px;
-
-}
-
+  .container .img_box img {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+  }
+  .container .img_box span {
+    background:white;
+    padding: 4px;
+    opacity: 0.5;
+  }
+  
+  
+  footer{
+    background-color:blue;
+    text-align:center;
+    padding:20px;
+    margin:0px;
+  
+  }
