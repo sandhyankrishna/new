@@ -1,64 +1,58 @@
-<!Doctype html>
- <html>
- <head>
+<html>
+<head>
     <meta charset="utf-8"/>
-   <title>register form</title>
-     <link rel="stylesheet" type="text/css" href="style1.css">
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-     <script type="text/javaScript">
-    $(document).ready(function(){
-      if(jquery) {
-        alert("yeah!");
-      }else {
-        alert("doesn't work");
-      }
-    });
- </script>
-     
-   </head>
- <body>
-   
- <form>
-      <button><a href="signin.html">signin</a></button>
-    <div class="multi-box">
-      <h1>Register</h1> 
-        <div class="textbox">
-       <i class="fa fa-user icon"></i>
-       <input type="text" placeholder="username" name="username" value="" class="inputField1">
-   </div>
-   <div class="textbox">
-       <i class="fa fa-envelope icon"></i>
-       <input type="text" placeholder="Email" name="Email" value="" class="inputField2">
+  <title>register form</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function(){
+     if(jQuery) {
+       alert("yeah!");
+     } else {
+       alret("doesn't work");
+     }
+   });
+</script>
+
+</head>
+<body>
+    <form>
+        <a href="signin.html">signin</a>
+      <div class="multi-box">
+        <h1>Register</h1> 
+          <div class="textbox">
+         <i class="fa fa-user icon"></i>
+         <input type="text" placeholder="username" name="username" value="" class="inputField1">
      </div>
-   <div class="textbox">
-       <i class="fa fa-key icon"></i>
-       <input type="password" placeholder="password" name="password" value=""  class="inputField3">
-      </div>
+     <div class="textbox">
+         <i class="fa fa-envelope icon"></i>
+         <input type="text" placeholder="Email" name="Email" value="" class="inputField2">
+       </div>
      <div class="textbox">
          <i class="fa fa-key icon"></i>
-       <input type="password" placeholder="confirm password" name="confirm password" value="" class="inputField4">
-      <input type="submit" name="submit" value="register">
-      
-   </div>
-   </form>
- 
-   <script type="text/javaScript" charset="utf-8">
-   
-   let formSubmit = function(event) {
-     event.preventDefault();
-     
-    let username             = document.querySelector(".inputField1").value;
-    let email                = document.querySelector(".inputField2").value;
-    let password             = document.querySelector(".inputField3").value;
-    let passwordConfirmation = document.querySelector(".inputField4").value;
-    
+         <input type="password" placeholder="password" name="password" value=""  class="inputField3">
+        </div>
+       <div class="textbox">
+           <i class="fa fa-key icon"></i>
+         <input type="password" placeholder="confirm password" name="confirm password" value="" class="inputField4">
+        <input type="submit" name="submit" value="register">
+        
+     </div>
+     </form>
+
+     <script type ="text/javasrcipt" charset="utf-8">
+      $("form").on("submit", function(event){
+        event.preventDefault();
+     var username             = $(".inputField1").val();
+     var email                = $(".inputField2").val();
+     var password             = $(".inputField3").val();
+     var passwordConfirmation = $(".inputField4").val();
+  
   localStorage.setItem("username", username);
- localStorage.setItem("email", email);
- localStorage.setItem("password", password);
- localStorage.setItem("passwordConfirmation", passwordConfirmation);
- }
- document.querySelector("form").addEventListener("submit", formSubmit, false);
- 
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+localStorage.setItem("passwordConfirmation", passwordConfirmation);
+});
  </script>
   </body>
- </html>
+</html> 
