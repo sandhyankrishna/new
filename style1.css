@@ -100,7 +100,9 @@ body {
     padding: 4px;
     opacity: 0.5;
   }
-  
+  .val_error{
+    color: #ff1f1f;
+  }
   
   footer{
     background-color:blue;
