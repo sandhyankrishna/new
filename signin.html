@@ -3,72 +3,50 @@
     <link rel="stylesheet" type="text/css" href="style1.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type =text/javascript meta charset="utf-8">
- $(document).ready(function(){
-        if(jQuery) {
-          alert("yeah!");
-        } else {
-          alret("doesn't work");
-        }
-   
-      });
+$(document).ready(function(){
+     if(jQuery) {
+       alert("yeah!");
+     } else {
+       alret("doesn't work");
+     }
+   });
       </script>
 </head>
 <body>
-<form method="post" action="signin.html" onsubmit="return validate()" name="vform">
-    <a href="register.html">register</a>
 
+      <a href="register.html">register</a>
 <div class="multi-box">
     <h1>Sign in </h1> 
+ <form>
     <div class="textbox">
             <i class="fa fa-user icon"></i>
     <input type="text" placeholder="username" name="username" value="">
-    <div id="name_error" class="val_error"></div>
-    </div>
+      </div>
      <div class="textbox">
             <i class="fa fa-key icon"></i>
    <input type="password" placeholder="password" name="password" value="">
-   <div id="password_error" class="val_error"></div>
    
     </div>
       <input class="btn" type="button" name="" value="cancel">
-      <input type="submit" name="submit" value="signin">
-          
-    </div>
-    <script type= text/javascript charset="utf-8"> 
-    var username = document.forms["vfrom"]["username"]
-    var password = document.forms["vfrom"]["password"]
-
-   var name_error =  document.getElementById("name_ereor");
-   var password_error =  document.getElementById("password_error");
-
-    username.addeventlistener("blur", nameVerify, true);
-    password.addeventlistener("blur", nameVerify, true);
-
-function validate(){
-    if(username.value== ""){
-        username.style.border = "1px solid red";
-        name_error.textcontent = "incorrect username";
-        username.focus();
-        return false;
-    }
+      <input type="submit" name="submit" value="signin" onclick="javascript:validate()"/>
+     </div>
+    </form>
+ <script type="text/javascript" meta charset="utf-8">
+function validate()
+{  if( document.getElementById("username").value == "workshop"
+  && document.getElementById("password").value == "workshop" )
+  {
+      alert("validation succeeded");
+      location.href="signin.html";
+  }
+  else
+  {
+   alert("validation failed");
+   location.href="fail.html";   
+  }
 }
-function validate(){
-    if(password.value== ""){
-        password.style.border = "1px solid red";
-        password_error.textcontent = "incorrect password";
-        password.focus();
-        return false;
-    }
-}  
-function name_verify(){
-    if (username.value !="") {
-      username.style.border = "1px solid 5E6E66";
-      username_error.innerHTML = ""; 
-      return true;
-    }
-}
-    </script>
-        
-</form>
+ </script>
+
+
 </body>
 </html>
