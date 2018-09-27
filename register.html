@@ -40,33 +40,42 @@
      </div>
      </form>
 
-     <script type="text/javascript">
-     
-    function Validate() {
-        var password = document.getElementById("txtPassword").value;
-        var confirmPassword = document.getElementById("txtConfirmPassword").value;
-        if (password != confirmPassword) {
-            alert("Passwords do not match.");
-            return false;
+     <script>
+       function validatePassword() {
+        var validator = $(".signin").validate({
+            rules: {
+                password: "required",
+                confirmpassword: {
+                    equalTo: ".password"
+                }
+            },
+            messages: {
+                password: " Enter Password",
+                confirmpassword: " Enter Confirm Password Same as Password"
+            }
+        });
+        if (validator.form()) {
+            alert('Sucess');
         }
-        return true;
     }
-       // has to listen for all submit events in the document
+      /* has to listen for all submit events in the document */
+      
       $("form").on("submit", function(event){
-      //stops the default action of an element from happening
+         /* stops the default action of an element from happening */
+     
         event.preventDefault();
-      });
-    //let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used.
-    let username             = $(".inputField1").val();
-    let email               = $(".inputField2").val();
-    let password             = $(".inputField3").val();
-    let passwordConfirmation = $(".inputField4").val();
+        /* let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used */
+ 
+     var username             = $(".inputField1").val();
+     var email                = $(".inputField2").val();
+     var password             = $(".inputField3").val();
+     var passwordConfirmation = $(".inputField4").val();
   
   localStorage.setItem("username", username);
 localStorage.setItem("email", email);
 localStorage.setItem("password", password);
 localStorage.setItem("passwordConfirmation", passwordConfirmation);
-
+});
  </script>
   </body>
 </html> 
