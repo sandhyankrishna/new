@@ -20,30 +20,43 @@ $(document).ready(function(){
  <form>
     <div class="textbox">
             <i class="fa fa-user icon"></i>
-    <input type="text" placeholder="username" name="username" value="">
-      </div>
+            <input type="text" placeholder="username" name="username" value="" class="inputField1">
+
+        </div>
      <div class="textbox">
             <i class="fa fa-key icon"></i>
-   <input type="password" placeholder="password" name="password" value="">
-   
-    </div>
+            <input type="password" placeholder="password" name="password" value="" class="inputField2">
+
+        </div>
       <input class="btn" type="button" name="" value="cancel">
       <input type="submit" name="submit" value="signin" onclick="javascript:validate()"/>
      </div>
     </form>
- <script type="text/javascript" meta charset="utf-8">
+ <script type="text/javascript">
+ 
+    $("form").on("submit", function(event){
+      event.preventDefault();
+   var username             =$(".inputField1").val();
+    
+   var password            =$(".inputField12").val();
+   
+     
+localStorage.getElementById("username").val();
+localstorage.getElementById("password").val();
+});
 function validate()
-{  if( document.getElementById("username").value == "workshop"
-  && document.getElementById("password").value == "workshop" )
+{  if( $(".inputField1").val()
+ && $(".inputField2").val() )
   {
-      alert("validation succeeded");
+    alert("validation succeeded");
       location.href="signin.html";
   }
   else
   {
-   alert("validation failed");
-   location.href="fail.html";   
+    alert("validation failed");
+   location.href="signin.html";   
   }
+ 
 }
  </script>
 
