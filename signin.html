@@ -1,65 +1,66 @@
 <html>
-<head> 
-    <link rel="stylesheet" type="text/css" href="style1.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type =text/javascript meta charset="utf-8">
-$(document).ready(function(){
-     if(jQuery) {
-       alert("yeah!");
-     } else {
-       alret("doesn't work");
-     }
-   });
-      </script>
-</head>
-<body>
-
-      <a href="register.html">register</a>
-<div class="multi-box">
-    <h1>Sign in </h1> 
- <form>
-    <div class="textbox">
-            <i class="fa fa-user icon"></i>
-            <input type="text" placeholder="username" name="username" value="" class="inputField1">
-
-        </div>
-     <div class="textbox">
-            <i class="fa fa-key icon"></i>
-            <input type="password" placeholder="password" name="password" value="" class="inputField2">
-
-        </div>
-      <input class="btn" type="button" name="" value="cancel">
-      <input type="submit" name="submit" value="signin" onclick="javascript:validate()"/>
-     </div>
-    </form>
- <script type="text/javascript">
- 
-    $("form").on("submit", function(event){
-      event.preventDefault();
-   var username             =$(".inputField1").val();
-    
-   var password            =$(".inputField12").val();
-   
-     
-localStorage.getElementById("username").val();
-localstorage.getElementById("password").val();
-});
-function validate()
-{  if( $(".inputField1").val()
- && $(".inputField2").val() )
-  {
-    alert("validation succeeded");
-      location.href="signin.html";
-  }
-  else
-  {
-    alert("validation failed");
-   location.href="signin.html";   
-  }
- 
-}
+  <head>
+  <title>Javascript Login Form Validation</title>
+  <!-- Include CSS File Here -->
+  <link rel="stylesheet" href="style1.css"/>
+  <!-- Include JS File Here -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(jQuery) {
+        alert("yeah!");
+      } else {
+        alret("doesn't work");
+      }
+    });
  </script>
+</head>
+  <body>
+    
+      <a href="register.html">register</a>
+    <div class="multi-box">
+   <h2>signin</h2>
+    <form>
+  <div class="textbox">
+      <form id="form_id" method="post" name="myform">
+     <i class="fa fa-user icon"></i>
+    <input type="text" placeholder="username" name="username" value="" id="username"/>
+</div>
+<div class="textbox">
+    <form id="form_id" method="post" name="myform">
+   <i class="fa fa-user icon"></i>
+    <input type="password"  placeholder="password" name="password" id="password"/>
+  </div>
+  <input type="button" value="Login" id="submit" onclick="validate()"/>
+  </div>
+</form>
+  
+   <script type="text/javascript">
+  
 
-
+  var attempt = 3; // Variable to count number of attempts.
+  // Below function Executes on click of login button.
+  function validate(){
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  if ( username == "sandhya" && password == "sandhya@123"){
+  alert ("Login successfully");
+  window.location = "success.html"; // Redirecting to other page.
+  location.href="signin.html";
+  return false;
+  }
+  else{
+  attempt --;// Decrementing by one.
+  alert("You have left "+attempt+" attempt;");
+  // Disabling fields after 3 attempts.
+  if( attempt == 0){
+  document.getElementById("username").disabled = true;
+  document.getElementById("password").disabled = true;
+  document.getElementById("submit").disabled = true;
+  return false;
+  }
+  }
+  }
+</script>  
 </body>
 </html>

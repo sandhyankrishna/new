@@ -22,60 +22,58 @@
         <h1>Register</h1> 
           <div class="textbox">
          <i class="fa fa-user icon"></i>
-         <input type="text" placeholder="username" name="username" value="" class="inputField1">
+         <input type="text" placeholder="username" name="username" value="" id="inputField1">
      </div>
      <div class="textbox">
          <i class="fa fa-envelope icon"></i>
-         <input type="text" placeholder="Email" name="Email" value="" class="inputField2">
+         <input type="text" placeholder="Email" name="Email" value="" id="inputField2">
        </div>
      <div class="textbox">
          <i class="fa fa-key icon"></i>
-         <input type="password" placeholder="password" name="password" value=""  class="inputField3">
+         <input type="password" placeholder="password" name="password" value=""  id="inputField3">
         </div>
        <div class="textbox">
            <i class="fa fa-key icon"></i>
-         <input type="password" placeholder="confirm password" name="confirm password" value="" class="inputField4">
-        <input type="submit" name="submit" value="register">
-        
+         <input type="password" placeholder="confirm password" name="confirm password" value="" id="inputField4">
+         <input type="button" value="register" id="btnsubmit" onclick=" return validate()" />
+
      </div>
      </form>
 
-     <script>
-       function validatePassword() {
-        var validator = $(".signin").validate({
-            rules: {
-                password: "required",
-                confirmpassword: {
-                    equalTo: ".password"
-                }
-            },
-            messages: {
-                password: " Enter Password",
-                confirmpassword: " Enter Confirm Password Same as Password"
-            }
-        });
-        if (validator.form()) {
-            alert('Sucess');
-        }
-    }
-      /* has to listen for all submit events in the document */
+     <script type="text/javascript">
+    
+function validate(){
+	var password = document.getElementById("inputField3").value;
+	var confirmpassword = document.getElementById("inputField4").value;
+	if(password != confirmpassword) {
+	alert("your confirm password is not similar with password please enter the same password in both");
+	return false;
+	}
+	else{ 
+    alert("successfully registered");
+	return true;
+  }
+	}
+
+    
+     // has to listen for all submit events in the document 
       
-      $("form").on("submit", function(event){
-         /* stops the default action of an element from happening */
+     $("form").on("submit", function(event){
+         // stops the default action of an element from happening 
      
         event.preventDefault();
-        /* let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used */
+        // let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used 
  
-     var username             = $(".inputField1").val();
-     var email                = $(".inputField2").val();
-     var password             = $(".inputField3").val();
-     var passwordConfirmation = $(".inputField4").val();
+     let username             = $("#inputField1").val();
+     let email                = $("#inputField2").val();
+     let password             = $("#inputField3").val();
+     let passwordConfirmation = $("#inputField4").val();
   
   localStorage.setItem("username", username);
 localStorage.setItem("email", email);
 localStorage.setItem("password", password);
 localStorage.setItem("passwordConfirmation", passwordConfirmation);
 });
- </script>
+</script>
   </body>
 </html> 
