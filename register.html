@@ -35,20 +35,21 @@
        <div class="textbox">
            <i class="fa fa-key icon"></i>
          <input type="password" placeholder="confirm password" name="confirm password" value="" id="inputField4">
-         <input type="button" value="register" id="btnsubmit" onclick=" return validate()" />
-
+        <input type="submit" name="submit" value="register" onclick="return validate()" />
+        
      </div>
      </form>
 
-     <script type="text/javascript">
+     
+        <script type="text/javascript">
    // If confirmpassword is not eqaul to password , this function alerts a message, and returns false, to prevent the form from being submitted 
 function validate(){
+
   // this is regular DOM method to get some value
 	var password = document.getElementById("inputField3").value;
 	var confirmpassword = document.getElementById("inputField4").value;
 	if(password != confirmpassword) {
-    
-	alert("your confirm password is not similar with password please enter the same password in both");
+  alert("your confirm password is not similar with password please enter the same password in both");
 	return false;
 	}
 	else{ 
@@ -56,27 +57,23 @@ function validate(){
 	return true;
   }
 	}
-
-    
-     // has to listen for all submit events in the document 
-      
-     $("form").on("submit", function(event){
-         // stops the default action of an element from happening 
-     
-        event.preventDefault();
+  // has to listen for all submit events in the document 
+       $("form").on("submit", function(event){
+          // stops the default action of an element from happening 
+      event.preventDefault();
         // let allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used 
- 
-     let username             = $("#inputField1").val();
+    let username             = $("#inputField1").val();
      let email                = $("#inputField2").val();
      let password             = $("#inputField3").val();
      let passwordConfirmation = $("#inputField4").val();
 
-  // Save data to the current local store
- localStorage.setItem("username", username);
+// Save data to the current local store
+localStorage.setItem("username", username);
 localStorage.setItem("email", email);
 localStorage.setItem("password", password);
 localStorage.setItem("passwordConfirmation", passwordConfirmation);
 });
-</script>
+ </script>
   </body>
-</html> 
+</html>
+

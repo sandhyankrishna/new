@@ -29,38 +29,44 @@
 <div class="textbox">
     <form id="form_id" method="post" name="myform">
    <i class="fa fa-user icon"></i>
-    <input type="password"  placeholder="password" name="password" id="password"/>
+    <input type="password"  placeholder="password" name="password"  value="" id="password"/>
   </div>
-  <input type="button" value="Login" id="submit" onclick="validate()"/>
-  </div>
+  <input type = "button" value = "Login" id = "submit" onclick = "check()" />
+    
+</div>
 </form>
   
-   <script type="text/javascript" charset="utf-8">
-  
+   <script type="text/javascript" charset="utf-8" >
+ // Name and Password from the register-form
+var username = document.getElementById('username');
+var password = document.getElementById('password');
 
-  var attempt = 3; // Variable to count number of attempts.
-  // Below function Executes on click of login button.
-  function validate(){
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  if ( username == "sandhya" && password == "sandhya@123"){
-  alert ("Login successfully");
-  window.location = "success.html"; // Redirecting to other page.
-  location.href="signin.html";
-  return false;
-  }
-  else{
-  attempt --;// Decrementing by one.
-  alert("You have left "+attempt+" attempt;");
-  // Disabling fields after 3 attempts.
-  if( attempt == 0){
-  document.getElementById("username").disabled = true;
-  document.getElementById("password").disabled = true;
-  document.getElementById("submit").disabled = true;
-  return false;
-  }
-  }
-  }
+// storing input from register-form
+function store() {
+    localStorage.setItem('username', username.value);
+    localStorage.setItem('password', password.value);
+}
+
+
+// check if stored data from register-form is equal to entered data in the   login-form
+function check() {
+
+    // stored data from the register-form
+    var storeduserName = localStorage.getItem('userName');
+    var storedPassword = localStorage.getItem('password');
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName');
+    var password = document.getElementById('password');
+
+    // check if stored data from register-form is equal to data from login form
+    if(username.value == userName && password.value == password) {
+      alert('You are loged in.');
+    }
+    else {
+        alert(' username and password not matching.');
+    }
+}
 </script>  
 </body>
 </html>
