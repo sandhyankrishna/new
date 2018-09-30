@@ -35,21 +35,18 @@
 </form>
   
    <script type="text/javascript">
- // Name and Password from the register-form
-var username = document.getElementById('username');
-var password = document.getElementById('password');
-
+ 
 
 // check if stored data from register-form is equal to entered data in the   sigin-form
 function check() {
     // stored data from the register-form
-    var username = localStorage.getItem('username');
-    var Password = localStorage.getItem('password');
+   let username = localStorage.getItem('username');
+    let password = localStorage.getItem('password');
     // entered data from the signin-form
-    var userName = document.getElementById('userName');
-    var password = document.getElementById('password');
+   let a = document.getElementById("username").value;
+    let b = document.getElementById("password").value;
     // check if stored data from register-form is equal to data from signin form 
-    if(username.value == userName && password.value == password) {
+    if(a == username && b == password) {
       alert('success.');
     }
     else {
