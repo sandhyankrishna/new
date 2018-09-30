@@ -10,7 +10,7 @@
       if(jQuery) {
         alert("yeah!");
       } else {
-        alret("doesn't work");
+        alert("doesn't work");
       }
     });
  </script>
@@ -22,46 +22,35 @@
    <h2>signin</h2>
     <form>
   <div class="textbox">
-      <form id="form_id" method="post" name="myform">
-     <i class="fa fa-user icon"></i>
+        <i class="fa fa-user icon"></i>
     <input type="text" placeholder="username" name="username" value="" id="username"/>
 </div>
 <div class="textbox">
-    <form id="form_id" method="post" name="myform">
-   <i class="fa fa-user icon"></i>
+      <i class="fa fa-user icon"></i>
     <input type="password"  placeholder="password" name="password"  value="" id="password"/>
   </div>
-  <input type = "button" value = "Login" id = "submit" onclick = "check()" />
+  <input type = "button" value = "signin" id = "submit" onclick = "check()" />
     
 </div>
 </form>
   
-   <script type="text/javascript" charset="utf-8" >
+   <script type="text/javascript">
  // Name and Password from the register-form
 var username = document.getElementById('username');
 var password = document.getElementById('password');
 
-// storing input from register-form
-function store() {
-    localStorage.setItem('username', username.value);
-    localStorage.setItem('password', password.value);
-}
 
-
-// check if stored data from register-form is equal to entered data in the   login-form
+// check if stored data from register-form is equal to entered data in the   sigin-form
 function check() {
-
     // stored data from the register-form
-    var storeduserName = localStorage.getItem('userName');
-    var storedPassword = localStorage.getItem('password');
-
-    // entered data from the login-form
+    var username = localStorage.getItem('username');
+    var Password = localStorage.getItem('password');
+    // entered data from the signin-form
     var userName = document.getElementById('userName');
     var password = document.getElementById('password');
-
-    // check if stored data from register-form is equal to data from login form
+    // check if stored data from register-form is equal to data from signin form 
     if(username.value == userName && password.value == password) {
-      alert('You are loged in.');
+      alert('success.');
     }
     else {
         alert(' username and password not matching.');
