@@ -1,25 +1,58 @@
 <html>
-<head> 
-    <link rel="stylesheet" type="text/css" href="style1.css">
-
+  <head>
+  <title>signin form</title>
+  <!-- Include CSS File Here -->
+  <link rel="stylesheet" href="style1.css"/>
+  <!-- Include JS File Here -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      if(jQuery) {
+        alert("yeah!");
+      } else {
+        alert("doesn't work");
+      }
+    });
+ </script>
 </head>
-<body>
-<form>
-    <a href="register.html">register</a>
-
-<div class="multi-box">
-    <h1>Sign in </h1> 
-    <div class="textbox">
-            <i class="fa fa-user icon"></i>
-    <input type="text" placeholder="username" name="username" value="">
-    </div>
-     <div class="textbox">
-            <i class="fa fa-key icon"></i>
-   <input type="password" placeholder="password" name="password" value="">
-    </div>
-      <input class="btn" type="button" name="" value="cancel">
-      <input class="btn" type="button" name="" value="signin">
-    </div>
+  <body>
+    
+      <a href="register.html">register</a>
+    <div class="multi-box">
+   <h2>signin</h2>
+    <form>
+  <div class="textbox">
+        <i class="fa fa-user icon"></i>
+    <input type="text" placeholder="username" name="username" value="" id="username"/>
+</div>
+<div class="textbox">
+      <i class="fa fa-user icon"></i>
+    <input type="password"  placeholder="password" name="password"  value="" id="password"/>
+  </div>
+  <input type = "button" value = "signin" id = "submit" onclick = "check()" />
+    
+</div>
 </form>
+  
+   <script type="text/javascript">
+ 
+
+// check if stored data from register-form is equal to entered data in the   sigin-form
+function check() {
+    // stored data from the register-form
+   let username = localStorage.getItem('username');
+    let password = localStorage.getItem('password');
+    // entered data from the signin-form
+   let a = document.getElementById("username").value;
+    let b = document.getElementById("password").value;
+    // check if stored data from register-form is equal to data from signin form 
+    if(a == username && b == password) {
+      alert('success.');
+    }
+    else {
+        alert(' username and password not matching.');
+    }
+}
+</script>  
 </body>
 </html>
